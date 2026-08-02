@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="An independent demonstration of a simpler residential art course booking journey."
+    />
+    <title>Art course booking demonstration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <div class="demo-banner">
+      <span>Independent demonstration</span>
+      <p>No real booking or payment is taken. All names, dates, prices and availability are illustrative.</p>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Art course booking demo home">
+        <span class="brand-mark" aria-hidden="true">RA</span>
+        <span>Residential Art Courses <small>booking concept</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#courses">Courses</a>
+        <a href="#how-it-works">How it works</a>
+        <button class="view-toggle" id="view-toggle" type="button">
+          <span class="toggle-dot" aria-hidden="true"></span>
+          <span id="view-toggle-label">Show owner view</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero customer-only">
+        <div class="hero-copy">
+          <p class="eyebrow">A calmer residential booking experience</p>
+          <h1>Choose your course.<br />See what’s available.<br />Book in minutes.</h1>
+          <p class="hero-intro">
+            Everything a guest needs in one place: dates, rooms, prices and live availability—without
+            waiting for an email or making a phone call.
+          </p>
+          <a class="primary-button" href="#courses">Browse three courses <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="hero-card" aria-label="Booking improvements">
+          <p class="eyebrow">The proposed improvement</p>
+          <ol>
+            <li><span>01</span><strong>Clear choices</strong><small>Dates, prices and room options together</small></li>
+            <li><span>02</span><strong>Immediate confidence</strong><small>Availability shown before an enquiry</small></li>
+            <li><span>03</span><strong>Less administration</strong><small>Web and phone bookings share one view</small></li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="trust-strip customer-only" aria-label="Key booking information">
+        <div><strong>£100</strong><span>deposit to reserve</span></div>
+        <div><strong>3 steps</strong><span>from course to confirmation</span></div>
+        <div><strong>One view</strong><span>for guest and course team</span></div>
+      </section>
+
+      <section class="courses-section customer-only" id="courses">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Upcoming programme</p>
+            <h2>Find your course</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter courses by medium">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="mixed-media">Mixed media</button>
+            <button class="filter" type="button" data-filter="pastel">Pastel</button>
+            <button class="filter" type="button" data-filter="watercolour">Watercolour</button>
+          </div>
+        </div>
+        <div class="course-grid" id="course-grid"></div>
+      </section>
+
+      <section class="how-section customer-only" id="how-it-works">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A calmer journey</p>
+            <h2>From inspiration to confirmation</h2>
+          </div>
+          <p>Simple enough for guests. Structured enough for the team.</p>
+        </div>
+        <div class="steps-grid">
+          <article><span>1</span><h3>Pick a course</h3><p>Compare the tutor, dates, medium and price without jumping between pages.</p></article>
+          <article><span>2</span><h3>Choose your stay</h3><p>Select a room or non-residential place and see whether it is available.</p></article>
+          <article><span>3</span><h3>Reserve securely</h3><p>Enter guest details and pay the deposit. A real version would send confirmation automatically.</p></article>
+        </div>
+      </section>
+
+      <section class="owner-view" id="owner-view" hidden>
+        <div class="owner-hero">
+          <div>
+            <p class="eyebrow">Owner demonstration</p>
+            <h1>One simple booking desk.</h1>
+            <p>Website reservations and telephone bookings update the same availability figures.</p>
+          </div>
+          <div class="owner-summary" id="owner-summary"></div>
+        </div>
+
+        <div class="owner-toolbar">
+          <div>
+            <p class="eyebrow">Course management</p>
+            <h2>Availability at a glance</h2>
+          </div>
+          <button class="secondary-button" id="reset-demo" type="button">Reset demonstration</button>
+        </div>
+        <div class="owner-list" id="owner-list"></div>
+
+        <div class="owner-note">
+          <strong>What would be automated in the live system?</strong>
+          <p>Confirmation emails, deposit receipts, balance reminders, guest lists and a weekly arrivals summary.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Booking concept demonstration</strong>
+        <p>Prepared as an independent proposal for a lower-administration booking process.</p>
+      </div>
+      <p>Prototype only · sample availability · no data is transmitted</p>
+    </footer>
+
+    <dialog id="booking-dialog" aria-labelledby="booking-title">
+      <form method="dialog" class="dialog-shell" id="booking-form">
+        <button class="dialog-close" type="button" aria-label="Close booking form">×</button>
+        <div class="dialog-heading">
+          <p class="eyebrow">Demonstration reservation</p>
+          <h2 id="booking-title">Reserve your place</h2>
+          <p id="booking-subtitle"></p>
+        </div>
+        <div class="choice-list" id="package-choices"></div>
+        <div class="form-grid">
+          <label>Guest name<input name="guestName" autocomplete="name" required placeholder="e.g. Alex Smith" /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="alex@example.com" /></label>
+        </div>
+        <div class="deposit-row">
+          <span>Due today in a live booking</span><strong>£100 deposit</strong>
+        </div>
+        <button class="primary-button full-width" type="submit">Complete demonstration booking</button>
+        <p class="fine-print">No payment is collected and these details never leave your browser.</p>
+      </form>
+    </dialog>
+
+    <dialog id="waitlist-dialog" aria-labelledby="waitlist-title">
+      <form method="dialog" class="dialog-shell" id="waitlist-form">
+        <button class="dialog-close" type="button" aria-label="Close waiting list form">×</button>
+        <div class="dialog-heading">
+          <p class="eyebrow">No commitment</p>
+          <h2 id="waitlist-title">Join the waiting list</h2>
+          <p id="waitlist-subtitle"></p>
+        </div>
+        <label>Email address<input name="waitlistEmail" type="email" autocomplete="email" required placeholder="alex@example.com" /></label>
+        <button class="primary-button full-width" type="submit">Join demonstration list</button>
+        <p class="fine-print">This is a local demonstration. Nothing is sent or stored online.</p>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
