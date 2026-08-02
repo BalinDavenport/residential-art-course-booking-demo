@@ -2,6 +2,8 @@
 
 An independent, interactive demonstration of a clearer booking journey for a residential art-course venue. It is deliberately lightweight: plain HTML, CSS and JavaScript, with no database, framework or paid hosting dependency.
 
+**[View the live demonstration](https://balindavenport.github.io/residential-art-course-booking-demo/)**
+
 ## What the demonstration shows
 
 - Three realistic course listings with dates, accommodation choices and prices
